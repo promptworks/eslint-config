@@ -6,7 +6,7 @@ let b = 2;
 
 console.log(a, b);
 
-const MyComponent = () => {
+const MyComponent = ({ _ignored }) => {
   <div>
     <label>Hi I'm Ray!</label>
   </div>

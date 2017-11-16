@@ -14,7 +14,7 @@ const cli = new CLIEngine({
 const actual = cli.executeOnFiles([FIXTURE]);
 
 if (process.argv.includes('-u')) {
-  fs.writeFileSync(SNAPSHOT, JSON.stringify(actual));
+  fs.writeFileSync(SNAPSHOT, JSON.stringify(actual, null, 2));
   console.log(`Generated ${SNAPSHOT}`);
   process.exit(0);
 }

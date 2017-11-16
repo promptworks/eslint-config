@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "node test/test.js",
-    "test:update": "node test/test.js -u"
+    "test:update": "node test/test.js -u",
+    "test:lint": "eslint test/poorly-formatted.js --config test/eslintrc.js"
   },
   "repository": {
     "type": "git",
