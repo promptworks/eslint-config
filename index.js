@@ -53,7 +53,8 @@ module.exports = {
      * See: https://prettier.io/docs/en/options.html
      */
     'prettier/prettier': ['error', {
-      singleQuote: true
+      singleQuote: true,
+      trailingComma: 'es5'
     }],
 
     /**
