@@ -13,8 +13,8 @@ let b = 2;
 // no-unused
 const c = 1;
 
-// exception to no-unused
-const _d = 1;
+// no-unused (varsIgnorePattern: '^_', argsIgnorePattern: '^_')
+const _d = _f => null;
 
 // no-console
 console.log(a, b);

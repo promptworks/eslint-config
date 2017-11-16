@@ -4,41 +4,30 @@
       "filePath": "/Users/rzane/Workspace/eslint-config-promptworks/test/poorly-formatted.js",
       "messages": [
         {
-          "ruleId": "no-unused-vars",
-          "severity": 2,
-          "message": "'foo' is defined but never used. Allowed unused vars must match /^_/.",
-          "line": 2,
-          "column": 8,
-          "nodeType": "Identifier",
-          "source": "import foo from 'foo';",
-          "endLine": 2,
-          "endColumn": 11
-        },
-        {
           "ruleId": "import/no-unresolved",
           "severity": 2,
           "message": "Unable to resolve path to module 'foo'.",
-          "line": 2,
-          "column": 17,
+          "line": 5,
+          "column": 8,
           "nodeType": "Literal",
-          "source": "import foo from 'foo';",
-          "endLine": 2,
-          "endColumn": 22
+          "source": "import 'foo';",
+          "endLine": 5,
+          "endColumn": 13
         },
         {
           "ruleId": "no-var",
           "severity": 2,
           "message": "Unexpected var, use let or const instead.",
-          "line": 4,
+          "line": 8,
           "column": 1,
           "nodeType": "VariableDeclaration",
           "source": "var a = 1;",
-          "endLine": 4,
+          "endLine": 8,
           "endColumn": 11,
           "fix": {
             "range": [
-              51,
-              54
+              113,
+              116
             ],
             "text": "let"
           }
@@ -47,90 +36,119 @@
           "ruleId": "prefer-const",
           "severity": 2,
           "message": "'b' is never reassigned. Use 'const' instead.",
-          "line": 5,
+          "line": 11,
           "column": 5,
           "nodeType": "Identifier",
           "source": "let b = 2;",
-          "endLine": 5,
+          "endLine": 11,
           "endColumn": 6,
           "fix": {
             "range": [
-              62,
-              65
+              141,
+              144
             ],
             "text": "const"
           }
         },
         {
+          "ruleId": "no-unused-vars",
+          "severity": 2,
+          "message": "'c' is assigned a value but never used. Allowed unused vars must match /^_/.",
+          "line": 14,
+          "column": 7,
+          "nodeType": "Identifier",
+          "source": "const c = 1;",
+          "endLine": 14,
+          "endColumn": 8
+        },
+        {
           "ruleId": "no-console",
           "severity": 2,
           "message": "Unexpected console statement.",
-          "line": 7,
+          "line": 20,
           "column": 1,
           "nodeType": "MemberExpression",
           "source": "console.log(a, b);",
-          "endLine": 7,
+          "endLine": 20,
           "endColumn": 12
         },
         {
-          "ruleId": "no-unused-vars",
+          "ruleId": "prettier/prettier",
           "severity": 2,
-          "message": "'MyComponent' is assigned a value but never used. Allowed unused vars must match /^_/.",
-          "line": 9,
-          "column": 7,
-          "nodeType": "Identifier",
-          "source": "const MyComponent = ({ _ignored }) => {",
-          "endLine": 9,
-          "endColumn": 18
+          "message": "Insert `,`",
+          "line": 23,
+          "column": 15,
+          "nodeType": null,
+          "source": "  name: 'Rick' // missing trailing comma",
+          "endLine": 23,
+          "endColumn": 15,
+          "fix": {
+            "range": [
+              342,
+              342
+            ],
+            "text": ","
+          }
+        },
+        {
+          "ruleId": "prettier/prettier",
+          "severity": 2,
+          "message": "Insert `;`",
+          "line": 24,
+          "column": 2,
+          "nodeType": null,
+          "source": "} // missing semi",
+          "endLine": 24,
+          "endColumn": 2,
+          "fix": {
+            "range": [
+              370,
+              370
+            ],
+            "text": ";"
+          }
         },
         {
           "ruleId": "jsx-a11y/label-has-for",
           "severity": 2,
           "message": "Form label must have associated control",
-          "line": 11,
+          "line": 29,
           "column": 5,
           "nodeType": "JSXOpeningElement",
-          "source": "    <label>Hi I'm Ray!</label>",
-          "endLine": 11,
+          "source": "    <label>Hi</label>",
+          "endLine": 29,
           "endColumn": 12
         },
         {
           "ruleId": "react/no-unescaped-entities",
           "severity": 2,
           "message": "HTML entities must be escaped.",
-          "line": 11,
-          "column": 16,
+          "line": 32,
+          "column": 11,
           "nodeType": "Literal",
-          "source": "    <label>Hi I'm Ray!</label>"
+          "source": "    <div>I'm a component</div>"
         },
         {
-          "ruleId": "prettier/prettier",
+          "ruleId": "react/forbid-prop-types",
           "severity": 2,
-          "message": "Insert `;`",
-          "line": 12,
-          "column": 9,
-          "nodeType": null,
-          "source": "  </div>",
-          "endLine": 12,
-          "endColumn": 9,
-          "fix": {
-            "range": [
-              181,
-              181
-            ],
-            "text": ";"
-          }
+          "message": "Prop type `any` is forbidden",
+          "line": 37,
+          "column": 3,
+          "nodeType": "Property",
+          "source": "  user: PropTypes.any, // react/forbid-prop-types",
+          "endLine": 37,
+          "endColumn": 22
         }
       ],
-      "errorCount": 9,
+      "errorCount": 10,
       "warningCount": 0,
-      "fixableErrorCount": 3,
+      "fixableErrorCount": 4,
       "fixableWarningCount": 0,
-      "source": "import React from 'react';\nimport foo from 'foo';\n\nvar a = 1;\nlet b = 2;\n\nconsole.log(a, b);\n\nconst MyComponent = ({ _ignored }) => {\n  <div>\n    <label>Hi I'm Ray!</label>\n  </div>\n};\n"
+      "source": "import React from 'react';\nimport PropTypes from 'prop-types';\n\n// import/no-unresolved\nimport 'foo';\n\n// no-var\nvar a = 1;\n\n// prefer-const\nlet b = 2;\n\n// no-unused\nconst c = 1;\n\n// no-unused (varsIgnorePattern: '^_', argsIgnorePattern: '^_')\nconst _d = _f => null;\n\n// no-console\nconsole.log(a, b);\n\nexport const myObject = {\n  name: 'Rick' // missing trailing comma\n} // missing semi\n\nexport const MyComponent = () => (\n  <div>\n    {/* jsx-a11y/label-has-for */}\n    <label>Hi</label>\n\n    {/* react/no-unescaped-entities */}\n    <div>I'm a component</div>\n  </div>\n);\n\nMyComponent.propTypes = {\n  user: PropTypes.any, // react/forbid-prop-types\n};\n"
     }
   ],
-  "errorCount": 9,
+  "errorCount": 10,
   "warningCount": 0,
-  "fixableErrorCount": 3,
+  "fixableErrorCount": 4,
   "fixableWarningCount": 0
 }
