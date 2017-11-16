@@ -1,0 +1,31 @@
+{
+  "name": "eslint-config-promptworks",
+  "version": "1.0.0",
+  "description": "A set of conventions for using ESLint on PromptWorks projects.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/promptworks/eslint-config-promptworks.git"
+  },
+  "keywords": [
+    "eslint",
+    "config",
+    "promptworks"
+  ],
+  "author": "Ray Zane",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/promptworks/eslint-config-promptworks/issues"
+  },
+  "homepage": "https://github.com/promptworks/eslint-config-promptworks#readme",
+  "peerDependencies": {
+    "eslint": "^4.9.0",
+    "eslint-config-prettier": "^2.6.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0"
+  }
+}
