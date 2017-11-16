@@ -3,11 +3,11 @@ module.exports = {
     'eslint:recommended',
     'plugin:import/errors',
     'plugin:import/warnings',
-    'prettier'
+    'prettier',
   ],
 
   plugins: [
-    'prettier'
+    'prettier',
   ],
 
   rules: {
@@ -34,7 +34,7 @@ module.exports = {
      * See: https://eslint.org/docs/rules/no-console
      */
     'no-console': ['error', {
-      allow: ['warn', 'error']
+      allow: ['warn', 'error'],
     }],
 
     /**
@@ -45,22 +45,22 @@ module.exports = {
      */
     'no-unused-vars': ['error', {
       varsIgnorePattern: '^_',
-      argsIgnorePattern: '^_'
+      argsIgnorePattern: '^_',
     }],
 
     /**
-     * Prefer single quoted strings.
+     * Prefer single quoted strings and trailing commas.
      * See: https://prettier.io/docs/en/options.html
      */
     'prettier/prettier': ['error', {
       singleQuote: true,
-      trailingComma: 'es5'
+      trailingComma: 'es5',
     }],
 
     /**
      * Order your imports.
      * See: https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/order.md
      */
-    'import/order': 'error'
-  }
+    'import/order': 'error',
+  },
 }

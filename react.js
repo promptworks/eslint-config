@@ -2,12 +2,12 @@ module.exports = {
   extends: [
     'plugin:react/recommended',
     'prettier/react',
-    'plugin:jsx-a11y/recommended'
+    'plugin:jsx-a11y/recommended',
   ],
 
   plugins: [
     'react',
-    'jsx-a11y'
+    'jsx-a11y',
   ],
 
   rules: {
@@ -31,6 +31,6 @@ module.exports = {
      * Allow non-interactive elements to have a `role` attribute.
      * See: https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-noninteractive-element-to-interactive-role.md
      */
-    'jsx-a11y/no-noninteractive-element-to-interactive-role': 0
-  }
+    'jsx-a11y/no-noninteractive-element-to-interactive-role': 0,
+  },
 }
